@@ -1,3 +1,3 @@
 # Check even or odd
-def is_even(n):
-    return n % 2 == 0
+def is_even(n: int | float) -> bool:
+    return n % 2 == 0;

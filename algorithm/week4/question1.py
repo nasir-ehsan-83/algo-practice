@@ -1,11 +1,16 @@
-def second_largest(arr):
+def second_largest(arr: list[float]) -> float | None:
     if len(arr) < 2:
-        return None
-    first = second = float('-inf')
+        return None;
+
+    first: float = float("-inf");
+    second: float = float('-inf');
+
     for num in arr:
         if num > first:
-            second = first
-            first = num
+            second = first;
+            first = num;
+        
         elif num > second and num != first:
-            second = num
-    return second
+            second = num;
+    
+    return second;

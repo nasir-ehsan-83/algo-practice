@@ -1,22 +1,33 @@
-class SinglyLinkedList:
-    def __init__(self):
-        self.head = None
+from question1 import Node;
 
-    def append(self, val):
-        from question1 import Node
-        new_node = Node(val)
+
+class SinglyLinkedList[T]:
+    head: Node[T] | None;
+
+    def __init__(self) -> None:
+        self.head = None;
+
+    def append(self, data: T) -> None:
+        new_node: Node[T] = Node(data);
+
         if not self.head:
-            self.head = new_node
-            return
-        curr = self.head
-        while curr.next:
-            curr = curr.next
-        curr.next = new_node
+            self.head = new_node;
+            return;
+    
+        current: Node[T] | None = self.head;
 
-    def search(self, val):
-        curr = self.head
-        while curr:
-            if curr.val == val:
-                return True
-            curr = curr.next
-        return False
+        while current.next:
+            current = current.next;
+        
+        current.next = new_node;
+
+    def search(self, data: T) -> bool:
+        current: Node[T] | None = self.head;
+
+        while current:
+            if current.data == data:
+                return True;
+        
+            current = current.next;
+        
+        return False;

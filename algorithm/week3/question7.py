@@ -1,5 +1,7 @@
-def sum_array(arr):
-    total = 0
+def sum_array(arr: list[int]) -> int:
+    total: int = 0;
+
     for num in arr:
-        total += num
-    return total
+        total += num;
+    
+    return total;

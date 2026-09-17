@@ -1,26 +1,36 @@
-class SinglyLinkedList:
-    def __init__(self):
-        self.head = None
+from question1 import Node;
 
-    def append(self, val):
-        from question1 import Node
-        new_node = Node(val)
+
+class SinglyLinkedList[T]:
+    head: Node[T] | None;
+
+    def __init__(self) -> None:
+        self.head = None;
+
+    def append(self, data: T) -> None:
+        new_node: Node[T] = Node(data);
+
         if not self.head:
-            self.head = new_node
-            return
-        curr = self.head
-        while curr.next:
-            curr = curr.next
-        curr.next = new_node
+            self.head = new_node;
+            return;
+    
+        current: Node[T] | None = self.head;
+        
+        while current.next:
+            current = current.next;
+        
+        current.next = new_node;
 
-    def delete_first(self):
+    def delete_first(self) -> None:
         if self.head:
-            self.head = self.head.next
+            self.head = self.head.next;
 
-    def to_list(self):
-        result = []
-        curr = self.head
-        while curr:
-            result.append(curr.val)
-            curr = curr.next
-        return result
+    def to_list(self) -> list[T]:
+        result: list[T] = [];
+        current: Node[T] | None = self.head;
+
+        while current:
+            result.append(current.data);
+            current = current.next;
+        
+        return result;

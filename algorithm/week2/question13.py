@@ -1,5 +1,5 @@
-def month_info(month):
-    months = {
+def month_info(month: int) -> tuple[str, int]:
+    months: dict[int, tuple[str, int]] = {
         1: ("January", 31),
         2: ("February", 28),
         3: ("March", 31),
@@ -12,5 +12,6 @@ def month_info(month):
         10: ("October", 31),
         11: ("November", 30),
         12: ("December", 31)
-    }
-    return months.get(month, ("Invalid", 0))
+    };
+    
+    return months.get(month, ("Invalid", 0));

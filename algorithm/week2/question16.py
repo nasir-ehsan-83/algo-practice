@@ -1,5 +1,7 @@
 def numbers_1_to_100():
-    result = []
+    result: list[int] = [];
+
     for i in range(1,101):
-        result.append(i)
-    return result
+        result.append(i);
+    
+    return result;

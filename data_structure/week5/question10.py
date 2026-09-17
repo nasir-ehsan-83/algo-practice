@@ -1,30 +1,39 @@
-class MinStack:
-    def __init__(self):
-        self.stack = []
-        self.min_stack = []
+class MinStack[T: (int, float)]:
+    stack: list[T];
+    min_stack: list[T];
 
-    def push(self, val):
-        self.stack.append(val)
-        if not self.min_stack or val <= self.min_stack[-1]:
-            self.min_stack.append(val)
+    def __init__(self) -> None:
+        self.stack = [];
+        self.min_stack = [];
 
-    def pop(self):
+    def push(self, data: T) -> None:
+        self.stack.append(data);
+        
+        if not self.min_stack or data <= self.min_stack[-1]:
+            self.min_stack.append(data)
+
+    def pop(self) -> T | None:
         if not self.stack:
-            return None
-        val = self.stack.pop()
-        if val == self.min_stack[-1]:
-            self.min_stack.pop()
-        return val
+            return None;
+    
+        data: T = self.stack.pop();
 
-    def top(self):
+        if data == self.min_stack[-1]:
+            self.min_stack.pop();
+        
+        return data;
+
+    def top(self) -> T | None:
         if not self.stack:
-            return None
-        return self.stack[-1]
+            return None;
+    
+        return self.stack[-1];
 
-    def getMin(self):
+    def getMin(self) -> None | T:
         if not self.min_stack:
-            return None
-        return self.min_stack[-1]
+            return None;
+    
+        return self.min_stack[-1];
 
-    def to_list(self):
-        return self.stack.copy()
+    def to_list(self) -> list[T]:
+        return self.stack.copy();

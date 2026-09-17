@@ -1,11 +1,18 @@
-def bmi_calculator(weight, height):
-    bmi = weight / (height * height)
+def bmi_calculator(weight: float, height: float) -> tuple[float, str]:
+    
+    bmi: float = weight / (height * height);
+    category: str;
+
     if bmi < 18.5:
-        category = 'Underweight'
+        category = "Underweight";
+    
     elif bmi < 25:
-        category = 'Normal weight'
+        category = "Normal weight";
+    
     elif bmi < 30:
-        category = 'Overweight'
+        category = "Overweight";
+    
     else:
-        category = 'Obese'
-    return round(bmi,2), category
+        category = "Obese";
+    
+    return round(bmi,2), category;

@@ -1,6 +1,11 @@
-def isIdentical(t1, t2):
+from question1 import TreeNode;
+
+
+def isIdentical[T](t1: TreeNode[T] | None, t2: TreeNode[T] | None) -> bool:
     if not t1 and not t2:
-        return True
+        return True;
+
     if not t1 or not t2:
-        return False
-    return t1.val == t2.val and isIdentical(t1.left, t2.left) and isIdentical(t1.right, t2.right)
+        return False;
+
+    return (t1.data == t2.data) and isIdentical(t1.left, t2.left) and isIdentical(t1.right, t2.right)

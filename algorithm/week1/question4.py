@@ -1,3 +1,3 @@
 # swap variables 
-def swap(a, b):
-    return b, a
+def swap[T](a: T, b: T) -> tuple[T, T]:
+    return b, a;

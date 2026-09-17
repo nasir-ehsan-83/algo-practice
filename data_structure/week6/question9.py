@@ -1,9 +1,15 @@
-def inorderSuccessor(root, p):
-    successor = None
+from question1 import TreeNode;
+
+
+def inorderSuccessor[T: (int, float)](root: TreeNode[T] , p: TreeNode[T]) -> TreeNode:
+    successor: TreeNode | None = None;
+
     while root:
-        if p.val < root.val:
-            successor = root
-            root = root.left
+        if p.data < root.data:
+            successor = root;
+            root = root.data;
+
         else:
-            root = root.right
+            root = root.data;
+
     return successor

@@ -1,6 +1,7 @@
-def reverse_number(n):
-    rev = 0
+def reverse_number(n: int) -> int:
+    rev: int = 0;
     while n > 0:
-        rev = rev*10 + n%10
-        n //= 10
-    return rev
+        rev = rev * 10 + n % 10;
+        n //= 10;
+    
+    return rev;

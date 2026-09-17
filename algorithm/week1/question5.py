@@ -1,8 +1,11 @@
 # find maximum value between three valriables
-def max_of_three(a, b, c):
-    maximum = a
+def max_of_three[T: (int, float, str)](a: T, b: T, c: T) -> T:
+    maximum: T = a;
+
     if b > maximum:
-        maximum = b
+        maximum = b;
+    
     if c > maximum:
-        maximum = c
-    return maximum
+        maximum = c;
+    
+    return maximum;

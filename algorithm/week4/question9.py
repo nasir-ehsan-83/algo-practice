@@ -1,13 +1,18 @@
-def compress_string(s):
+def compress_string(s: str) -> str:
     if not s:
-        return ""
-    result = ""
-    count = 1
+        return "";
+
+    result: str = "";
+    count: int = 1;
+
     for i in range(1, len(s)):
-        if s[i] == s[i-1]:
-            count += 1
+        if s[i] == s[i - 1]:
+            count += 1;
+        
         else:
-            result += s[i-1] + str(count)
-            count = 1
-    result += s[-1] + str(count)
-    return result
+            result += s[i - 1] + str(count);
+            count = 1;
+    
+    result += s[-1] + str(count);
+
+    return result;

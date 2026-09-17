@@ -1,22 +1,27 @@
-from week6.question1 import TreeNode
+from question1 import TreeNode;
 
 
-def bstFromPreorder(preorder):
+def bstFromPreorder[T](preorder: list[T]):
     if not preorder:
-        return None
-    root = TreeNode(preorder[0])
-    for val in preorder[1:]:
-        insertBST(root, val)
-    return root
+        return None;
 
-def insertBST(node, val):
-    if val < node.val:
+    root: TreeNode[T] = TreeNode[T](preorder[0]);
+
+    for data in preorder[1:]:
+        insertBST(root, data);
+    
+    return root;
+
+def insertBST[T](node: TreeNode[T], data: T):
+    if data < node.data:
         if node.left:
-            insertBST(node.left, val)
+            insertBST(node.left, data);
+        
         else:
-            node.left = TreeNode(val)
+            node.left = TreeNode[T](data);
+    
     else:
         if node.right:
-            insertBST(node.right, val)
+            insertBST(node.right, data)
         else:
-            node.right = TreeNode(val)
+            node.right = TreeNode[T](data)
