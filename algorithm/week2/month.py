@@ -11,7 +11,6 @@ def month_info(month: int) -> tuple[str, int]:
         9: ("September", 30),
         10: ("October", 31),
         11: ("November", 30),
-        12: ("December", 31)
-    };
-    
-    return months.get(month, ("Invalid", 0));
+        12: ("December", 31),
+    }
+    return months.get(month, ("Invalid", 0))
