@@ -1,9 +1,11 @@
-# compute simple interest
+def add_numbers[T: (int, float)](a: T, b: T) -> T:
+    return a + b
+
+
 def simple_interest(p: float, r: float, t: int) -> float:
     return (p * r * t) // 100
 
 
-# compute compound interest
 def compound_interest(p: float, r: float, t: int) -> float:
     amount: float = p
     for _ in range(t):
