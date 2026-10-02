@@ -1,3 +1,13 @@
+def is_leap_year(year: int) -> bool:
+    if year % 4 != 0:
+        return False
+
+    elif year % 100 != 0:
+        return True
+
+    return year % 400 == 0
+
+
 def month_info(month: int) -> tuple[str, int]:
     months: dict[int, tuple[str, int]] = {
         1: ("January", 31),
@@ -14,3 +24,11 @@ def month_info(month: int) -> tuple[str, int]:
         12: ("December", 31),
     }
     return months.get(month, ("Invalid", 0))
+
+
+def seconds_to_hms(seconds: int) -> tuple[int, int, int]:
+    h: int = seconds // 3600
+    seconds %= 3600
+    m: int = seconds // 60
+    s: int = seconds % 60
+    return h, m, s
