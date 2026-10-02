@@ -15,3 +15,9 @@ def compress_string(s: str) -> str:
 
     result += s[-1] + str(count)
     return result
+
+
+def abbreviate_sentence(sentence: str) -> str:
+    words: list[str] = sentence.split()
+
+    return " ".join(word[0] for word in words if word)
