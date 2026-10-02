@@ -12,3 +12,12 @@ def compound_interest(p: float, r: float, t: int) -> float:
         amount = amount + (amount * r // 100)
 
     return amount - p
+
+
+def power(a: float, b: int) -> int | float:
+    result: int | float = 1
+
+    for _ in range(b):
+        result *= a
+
+    return result
