@@ -1,4 +1,4 @@
-def merge_sorted_arrays[T: (int, float, str)](arr1: list[T], arr2: list[T]) -> list[T]:
+def merge_sorte[T: (int, float, str)](arr1: list[T], arr2: list[T]) -> list[T]:
     result: list[T] = []
     i: int = 0
     j: int = 0
