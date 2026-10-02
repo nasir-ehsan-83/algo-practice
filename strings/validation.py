@@ -18,3 +18,23 @@ def password_strength(password) -> str:
         return "Strong"
 
     return "Weak"
+
+
+type Char = str
+
+
+def is_balanced(s: str) -> bool:
+    stack: list[Char] = []
+    pairs: dict[Char, Char] = {")": "(", "}": "{", "]": "["}
+
+    for ch in s:
+        if ch in "({[":
+            stack.append(ch)
+
+        elif ch in ")}]":
+            if not stack or stack[-1] != pairs[ch]:
+                return False
+
+            stack.pop()
+
+    return not stack
