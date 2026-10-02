@@ -15,3 +15,13 @@ def merge_intervals(intervals: list[list[int]]) -> list[list[int]]:
             merged.append(current)
 
     return merged
+
+
+def intersection[T](arr1: list[T], arr2: list[T]) -> list[T]:
+    result: list[T] = []
+
+    for num in arr1:
+        if num in arr2 and num not in result:
+            result.append(num)
+
+    return result
