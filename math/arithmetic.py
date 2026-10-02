@@ -21,3 +21,7 @@ def power(a: float, b: int) -> int | float:
         result *= a
 
     return result
+
+
+def swap[T](a: T, b: T) -> tuple[T, T]:
+    return b, a
