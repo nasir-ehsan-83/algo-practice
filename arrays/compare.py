@@ -1,4 +1,4 @@
-def arrays_equal[T](arr1: list[T], arr2: list[T]) -> bool:
+def arr_eq[T](arr1: list[T], arr2: list[T]) -> bool:
     if len(arr1) != len(arr2):
         return False
 
