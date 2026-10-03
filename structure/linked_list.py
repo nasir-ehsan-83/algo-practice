@@ -26,7 +26,11 @@ class SinglyLinkedList[T]:
 
         return result
 
-    def insert_at_beginning(self, data: T) -> None:
+    def insert_first(self, data: T) -> None:
         new_node: Node[T] = Node(data)
         new_node.next = self.head
         self.head = new_node
+
+    def delete_first(self) -> None:
+        if self.head:
+            self.head = self.head.next
