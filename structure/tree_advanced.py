@@ -39,7 +39,9 @@ def is_subtree[T: (int, float)](s: TreeNode[T] | None, t: TreeNode[T] | None) ->
         if not a or not b:
             return False
 
-        return a.data == b.data and is_same(a.left, b.left) and isSame(a.right, b.right)
+        return (
+            a.data == b.data and is_same(a.left, b.left) and is_same(a.right, b.right)
+        )
 
     if not s:
         return False
