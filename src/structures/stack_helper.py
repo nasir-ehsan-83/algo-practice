@@ -1,4 +1,4 @@
-def evalRPN(tokens: str) -> int:
+def eval_RPN(tokens: str) -> int:
     stack: list[int] = []
     for token in tokens:
         if token in "+-*/":

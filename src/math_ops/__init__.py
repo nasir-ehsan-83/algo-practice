@@ -3,7 +3,7 @@ from .calculator import calculator
 from .comparison import is_even, max_of_three, min_of_three
 from .digits import count_digits, reverse_number, sum_of_digits
 from .geometry import rectangle_area_perimeter, triangle_type
-from .help_ops import decimal_to_binary, gcd, lcm, primes_up_to
+from .math_helpers import decimal_to_binary, gcd, lcm, primes_up_to
 from .properties import (
     factorial,
     factorial_recursive,

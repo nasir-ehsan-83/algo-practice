@@ -1,8 +1,8 @@
 from .basics import char_freq, count_vowels, reverse_string
 from .letter import letter_type
 from .manipulation import abbreviate_sentence, compress_string
-from .patterns import pattern_match
 from .permutations import longest_palindrome, string_permutations
+from .string_patterns import pattern_match
 from .validation import is_balanced, password_strength
 
 __all__: list[str] = [

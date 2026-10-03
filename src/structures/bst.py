@@ -1,4 +1,4 @@
-from .tree_node import TreeNode
+from .node import TreeNode
 
 
 def inorder_successor[T: (int, float)](root: TreeNode[T], p: TreeNode[T]) -> TreeNode:

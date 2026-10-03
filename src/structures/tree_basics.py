@@ -1,4 +1,4 @@
-from .tree_node import TreeNode
+from .node import TreeNode
 
 
 def tree_teight[T: (int, float)](root: TreeNode[T] | None) -> TreeNode[T] | int:

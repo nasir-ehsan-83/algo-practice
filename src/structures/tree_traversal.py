@@ -1,4 +1,4 @@
-from .tree_node import TreeNode
+from .node import TreeNode
 
 
 def nodes_at_distanceK[T: (int, float)](root: TreeNode[T], k: int) -> list[T]:
