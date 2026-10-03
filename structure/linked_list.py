@@ -25,3 +25,8 @@ class SinglyLinkedList[T]:
             current = current.next
 
         return result
+
+    def insert_at_beginning(self, data: T) -> None:
+        new_node: Node[T] = Node(data)
+        new_node.next = self.head
+        self.head = new_node
