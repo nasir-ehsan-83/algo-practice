@@ -1,80 +1,116 @@
-# Python DSA 🐍📚
+# Algo Practice 🧠🐍
 
-A collection of **Data Structures and Algorithms (DSA)** exercises implemented in Python, with automated tests using **pytest**.
+A personal collection of **Data Structures and Algorithms (DSA)** exercises implemented in Python — built while learning, one problem at a time.
 
 ---
 
-## 📁 Project Structure
+## 🗂️ Project Structure
 
 ```text
-python-dsa/
-├── algorithm/
-│   ├── week1/                 # Week 1: Basics
-│   ├── week2/                 # Week 2: Exercises 1–25
-│   ├── week3/                 # Week 3: Exercises 1–30
-│   └── week4/                 # Week 4: Exercises 1–25
-│
-├── data_structure/
-│   ├── week5/                 # Week 5: Exercises 1–14
-│   └── week6/                 # Week 6: Exercises 1–20
-│
-└── tests/
-    ├── algorithm/
-    │   ├── test_week1.py
-    │   ├── test_week2_part1.py
-    │   ├── test_week2_part2.py
-    │   ├── test_week3_part1.py
-    │   ├── test_week3_part2.py
-    │   ├── test_week4_part1.py
-    │   └── test_week4_part2.py
+algo-practice/
+├── LICENSE
+├── README.md
+└── src/
+    ├── __init__.py
     │
-    └── data_structure/
-        ├── test_week1.py
-        ├── test_week6_part1.py
-        └── test_week6_part2.py
+    ├── arrays/              # Array algorithms
+    │   ├── advanced.py
+    │   ├── basics.py
+    │   ├── compare.py
+    │   ├── intervals.py
+    │   ├── matrix.py
+    │   ├── rearrange.py
+    │   ├── search.py
+    │   └── unique.py
+    │
+    ├── games/               # Small games & interactive exercises
+    │   ├── guess.py
+    │   ├── rock_paper.py
+    │   └── traffic_light.py
+    │
+    ├── math_ops/            # Math & number algorithms
+    │   ├── arithmetic.py
+    │   ├── calculator.py
+    │   ├── comparison.py
+    │   ├── digits.py
+    │   ├── geometry.py
+    │   ├── math_helpers.py
+    │   ├── properties.py
+    │   └── sequences.py
+    │
+    ├── patterns/            # Star / pyramid patterns
+    │   └── pyramids.py
+    │
+    ├── searches/             # Searching algorithms
+    │   └── binary.py
+    │
+    ├── sorts/                # Sorting algorithms
+    │   └── merge.py
+    │
+    ├── string_ops/           # String algorithms
+    │   ├── basics.py
+    │   ├── letter.py
+    │   ├── manipulation.py
+    │   ├── permutations.py
+    │   ├── string_patterns.py
+    │   └── validation.py
+    │
+    ├── structures/           # Data structures
+    │   ├── bst.py
+    │   ├── linked_list.py
+    │   ├── node.py
+    │   ├── queue.py
+    │   ├── stack.py
+    │   ├── stack_helper.py
+    │   ├── tree_advanced.py
+    │   ├── tree_basics.py
+    │   └── tree_traversal.py
+    │
+    └── utils/                # Small utilities
+        ├── atm.py
+        ├── bmi.py
+        ├── grade.py
+        ├── temperature.py
+        └── time_utils.py
 ```
 
 ---
 
-## 🚀 Installation & Setup
+## ⚙️ Installation & Setup
 
-### Prerequisites
+### 📋 Prerequisites
 
-- Python 3.10 or higher
-- pip
+- **Python 3.12+** — uses PEP 695 generics such as `class Stack[T]`
+- **pip**
 
-### 1. Clone the repository
+### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/nasir-ehsan-83/python-dsa.git
-cd python-dsa
+git clone https://github.com/nasir-ehsan-83/algo-practice.git
+cd algo-practice
 ```
 
-### 2. Create a virtual environment
+### 2️⃣ Create a Virtual Environment
 
-**Linux / macOS:**
+**Linux / macOS**
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-**Windows:**
+**Windows**
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### 3. Install dependencies
+### 3️⃣ Install Dependencies
 
-If the repository contains a `requirements.txt` file:
+Currently, no external dependencies are required.
 
-```bash
-pip install -r requirements.txt
-```
-
-Otherwise, install `pytest` directly:
+To run tests once they are restored:
 
 ```bash
 pip install pytest
@@ -82,103 +118,115 @@ pip install pytest
 
 ---
 
+## 📚 Learning Content
+
+| Module | Topics |
+|---|---|
+| `arrays/` | Searching, sorting within arrays, matrix operations, intervals |
+| `math_ops/` | Arithmetic, digit manipulation, number properties, sequences |
+| `string_ops/` | Reversal, manipulation, validation, permutations, patterns |
+| `structures/` | Stack, Queue, Linked List, Binary Tree, BST |
+| `searches/` | Binary Search |
+| `sorts/` | Merge Sort |
+| `patterns/` | Pyramid & triangle patterns |
+| `games/` | Number guessing, Rock-Paper-Scissors, Traffic Light |
+| `utils/` | Temperature conversion, BMI, time, grade, ATM |
+
+---
+
+## 💻 Example Usage
+
+### 🧱 Using a Data Structure
+
+```python
+from src.structures.stack import Stack
+
+s = Stack[int]()
+
+s.push(1)
+s.push(2)
+s.push(3)
+
+print(s.pop())  # 3
+print(s.top())  # 2
+print(s.size())  # 2
+```
+
+### ➕ Using a Math Operation
+
+```python
+from src.math_ops.arithmetic import add_numbers
+
+print(add_numbers(2, 3))  # 5
+```
+
+### 🔤 Using a String Operation
+
+```python
+from src.string_ops.basics import reverse_string
+
+print(reverse_string("hello"))  # "olleh"
+```
+
+---
+
 ## 🧪 Running Tests
 
-### Run all tests
+> **Note:** Tests are currently being rewritten to match the new `src/` layout. They will be added back soon.
+
+Once restored, tests can be run with:
 
 ```bash
 pytest
 ```
 
-### Run tests for a specific week
-
-```bash
-pytest tests/algorithm/test_week2_part1.py
-```
-
-```bash
-pytest tests/data_structure/test_week6_part1.py
-```
-
-### Run tests with verbose output
-
-```bash
-pytest -v
-```
-
 ---
 
-## 🧠 Learning Content
+## 🛠️ Tools & Technologies
 
-| Section | Topic |
+| Technology | Purpose |
 |---|---|
-| `algorithm/week1` | Basics: addition, even/odd checks, string reversal, and more |
-| `algorithm/week2` | Mixed algorithm exercises (1–25) |
-| `algorithm/week3` | More advanced algorithm exercises (1–30) |
-| `algorithm/week4` | Additional algorithm exercises (1–25) |
-| `data_structure/week5` | Introduction to data structures (1–14) |
-| `data_structure/week6` | Advanced data structure exercises (1–20) |
+| 🐍 **Python 3.12+** | Programming language |
+| 🧪 **pytest** | Automated testing |
+| 🔧 **Git** | Version control |
+| 🐙 **GitHub** | Repository hosting |
 
 ---
 
-## 🧪 Example Exercise
+## 🗺️ Roadmap
 
-### Implementation
-
-```python
-# algorithm/week1/is_even.py
-
-def is_even(n: int) -> bool:
-    """Check if a number is even."""
-    return n % 2 == 0
-```
-
-### Corresponding Test
-
-```python
-# tests/algorithm/test_week1.py
-
-from algorithm.week1.is_even import is_even
-
-
-def test_is_even():
-    assert is_even(2) is True
-    assert is_even(3) is False
-```
-
----
-
-## 🛠 Tools & Technologies
-
-- **Python 3** — Programming language
-- **pytest** — Automated testing
-- **Git & GitHub** — Version control
+- [x] Reorganize modules under `src/`
+- [x] Rename modules to avoid standard-library conflicts (`math_ops`, `string_ops`)
+- [ ] Rewrite tests to match the new structure
+- [ ] Add missing data structures (Heap, Graph, Hash Table, ...)
+- [ ] Add CI workflow with GitHub Actions
+- [ ] Add static type checking with mypy
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome.
+This is primarily a personal learning repository, but suggestions and feedback are welcome.
 
 1. Fork the repository.
 2. Create a new branch:
 
-   ```bash
-   git checkout -b feature/your-feature
-   ```
+```bash
+git checkout -b feature/your-feature
+```
 
 3. Make your changes.
 4. Commit your changes:
 
-   ```bash
-   git commit -m "Add your feature"
-   ```
+```bash
+git commit -m "feat: add your feature"
+```
 
 5. Push the branch:
 
-   ```bash
-   git push origin feature/your-feature
-   ```
+```bash
+git push origin feature/your-feature
+```
 
 6. Open a Pull Request.
 
@@ -186,7 +234,9 @@ Contributions are welcome.
 
 ## 📄 License
 
-This project is released under the **MIT License**. See the [`LICENSE`](LICENSE) file for details.
+This project is released under the **MIT License**.
+
+See the [`LICENSE`](LICENSE) file for details.
 
 ---
 
@@ -198,4 +248,6 @@ This project is released under the **MIT License**. See the [`LICENSE`](LICENSE)
 
 ---
 
-⭐ If you find this project useful, consider giving it a star!
+## ⭐ Support
+
+If you find this project useful, consider giving it a **star** on GitHub.
