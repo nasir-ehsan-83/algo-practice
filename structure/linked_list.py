@@ -34,3 +34,13 @@ class SinglyLinkedList[T]:
     def delete_first(self) -> None:
         if self.head:
             self.head = self.head.next
+
+    def search(self, data: T) -> bool:
+        current: Node[T] | None = self.head
+        while current:
+            if current.data == data:
+                return True
+
+            current = current.next
+
+        return False
