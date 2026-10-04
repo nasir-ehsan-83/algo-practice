@@ -17,7 +17,6 @@ venv/
 .venv/
 env/
 ENV/
-.env/
 env.bak/
 venv.bak/
 
@@ -26,7 +25,7 @@ venv.bak/
 .env.local
 .env.*.local
 
-# IDE (برای پایتون)
+# IDE
 .vscode/
 .idea/
 *.swp
@@ -36,17 +35,6 @@ venv.bak/
 logs/
 *.log
 
-
-# Docker
-mongo_data/
-*.pid
-docker-compose.override.yml
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
 # OS
 .DS_Store
 Thumbs.db
@@ -54,5 +42,4 @@ Thumbs.db
 # Build
 dist/
 build/
-*.spec
 *.whl
