@@ -3,14 +3,12 @@ name = "algo-practice"
 version = "0.1.0"
 description = "Personal collection of DSA exercises in Python"
 readme = "README.md"
-authors = [
-    { 
-        name = "Nasir Ahmad Ehsan", 
-        email = "nasirahmadehsan1383@gmail.com" 
-    }
-]
 requires-python = ">=3.12"
 dependencies = []
+
+[[project.authors]]
+name = "Nasir Ahmad Ehsan"
+email = "nasirahmadehsan1383@gmail.com"
 
 [dependency-groups]
 dev = [
