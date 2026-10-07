@@ -25,7 +25,11 @@ def kth_largest[T: (int, float)](arr: list[T], k: int) -> T:
     return a[k - 1]
 
 
-def top_k_freq[T](arr: list[T], k) -> list[T]:
+def top_k_freq[T: (int, float, str)](arr: list[T], k) -> list[T]:
+    m: int = len(arr)
+    if not 1 <= k <= m:
+        raise ValueError(f"k must be in [1, {m}], got {k}")
+
     freq: dict[T, int] = {}
 
     for n in arr:
@@ -34,4 +38,5 @@ def top_k_freq[T](arr: list[T], k) -> list[T]:
     freq_items: list[tuple[T, int]] = list(freq.items())
     freq_items.sort(key=lambda x: x[1], reverse=True)
 
-    return [item[0] for item in freq_items[:k]]
+    items: list[T] = [item[0] for item in freq_items[:k]]
+    return sorted(items, reverse=True)
