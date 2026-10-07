@@ -9,19 +9,20 @@ def max_subarray_sum[T: (int, float)](arr: list[T]) -> T | int:
     return max_sum
 
 
-def kth_largest[T: (int, float, str)](arr: list[T], k: int) -> T:
+def kth_largest[T: (int, float)](arr: list[T], k: int) -> T:
     n: int = len(arr)
+    if not 1 <= k <= n:
+        raise ValueError(f"k must be in [1, {n}], got {k}")
 
+    a: list[T] = arr.copy()
     for i in range(k):
         max_idx: int = i
-
         for j in range(i + 1, n):
-            if arr[j] > arr[max_idx]:
+            if a[j] > a[max_idx]:
                 max_idx = j
+        a[i], a[max_idx] = a[max_idx], a[i]
 
-        arr[i], arr[max_idx] = arr[max_idx], arr[i]
-
-    return arr[k - 1]
+    return a[k - 1]
 
 
 def top_k_freq[T](nums: list[T], k) -> list[T]:
