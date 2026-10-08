@@ -1,6 +1,6 @@
 import pytest
 
-from src.arrays import kth_largest, top_k_freq
+from src.arrays import kth_largest, max_subarray_sum, top_k_freq
 
 
 @pytest.mark.parametrize(
@@ -53,3 +53,16 @@ def test_top_k_freq[T: (int, float, str)](
         top_k_freq([3, 2, 2], 0)
     with pytest.raises(ValueError):
         top_k_freq([3, 5, 6], 4)
+
+
+@pytest.mark.parametrize(
+    "array, expected",
+    [
+        ([2, 3, 5, 2, 5], 17),
+        ([-2, -3, -5, -2, -5], -2),
+        ([0, 0, 0, 0], 0),
+        ([1.2, 11.0, 4.7, 9.3, 13.8], 40.0),
+    ],
+)
+def test_max_subarray_sum[T: (int, float)](array: list[T], expected: T) -> None:
+    assert max_subarray_sum(array) == expected
