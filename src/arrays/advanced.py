@@ -9,7 +9,7 @@ def max_subarray_sum[T: (int, float)](arr: list[T]) -> T | int:
     return max_sum
 
 
-def kth_largest[T: (int, float)](arr: list[T], k: int) -> T:
+def kth_largest[T: (int, float, str)](arr: list[T], k: int) -> T:
     n: int = len(arr)
     if not 1 <= k <= n:
         raise ValueError(f"k must be in [1, {n}], got {k}")
