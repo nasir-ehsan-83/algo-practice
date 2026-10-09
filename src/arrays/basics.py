@@ -33,8 +33,8 @@ def smallest_element[T: (int, float)](arr: list[T]) -> T | None:
     return min_val
 
 
-def sum_elements(arr: list[int]) -> int:
-    total: int = 0
+def sum_elements[T: (int, float)](arr: list[T]) -> T:
+    total: T = 0  # type: ignore
 
     for num in arr:
         total += num
