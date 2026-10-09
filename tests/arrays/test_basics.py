@@ -1,6 +1,14 @@
+from math import inf
+
 import pytest
 
-from src.arrays import largest_element, largest_smallest, smallest_element, sum_elements
+from src.arrays import (
+    largest_element,
+    largest_smallest,
+    second_largest,
+    smallest_element,
+    sum_elements,
+)
 
 
 @pytest.mark.parametrize(
@@ -60,3 +68,18 @@ def test_largest_smallest[T: (int, float)](
 )
 def test_sum_elements[T: (int, float)](array: list[T], expected: T) -> None:
     assert sum_elements(array) == expected
+
+
+@pytest.mark.parametrize(
+    "array, expected",
+    [
+        ([4, 12, 67, 45, 23, 76], 67),
+        ([4.3, 2.76, 6.7, 4.25, 23.2, 7.62], 7.62),
+        ([-4, -12, -67, -45, -23, -76], -12),
+        ([0, 0, 0, 0], -inf),
+        ([1], None),
+        ([], None),
+    ],
+)
+def test_second_largest[T: (int, float)](array: list[T], expected: T) -> None:
+    assert second_largest(array) == expected
