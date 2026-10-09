@@ -1,6 +1,6 @@
 import pytest
 
-from src.arrays import largest_element, smallest_element
+from src.arrays import largest_element, largest_smallest, smallest_element
 
 
 @pytest.mark.parametrize(
@@ -31,3 +31,17 @@ def test_largest_element[T: (int, float)](array: list[T], expected: T) -> None:
 )
 def test_smallest_element[T: (int, float)](array: list[T], expected: T) -> None:
     assert smallest_element(array) == expected
+
+
+@pytest.mark.parametrize(
+    "first, second, third, expected",
+    [
+        (34, 12, 23, (34, 12)),
+        (-34, -12, -23, (-12, -34)),
+        (44.2, 12.4, 23.6, (44.2, 12.4)),
+    ],
+)
+def test_largest_smallest[T: (int, float)](
+    first: T, second: T, third: T, expected: tuple[T, T]
+) -> None:
+    assert largest_smallest(first, second, third) == expected
