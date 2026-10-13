@@ -1,6 +1,6 @@
 import pytest
 
-from src.arrays import unique_elements
+from src.arrays import remove_duplicates, unique_elements
 
 
 @pytest.mark.parametrize(
@@ -21,3 +21,24 @@ from src.arrays import unique_elements
 )
 def test_unique_elements[T](array: list[T], expected: list[T]) -> None:
     assert unique_elements(array) == expected
+
+
+@pytest.mark.parametrize(
+    "array, expected",
+    [
+        ([1, 4, 23, 3, 3, 1], [1, 4, 23, 3]),
+        ([1.9, 23.1, 3.3, 3.3, 1.9], [1.9, 23.1, 3.3]),
+        ([-1, -4, -23, -3, -3, -1], [-1, -4, -23, -3]),
+        (["f", "e", "r", "s", "s", "f", "f"], ["f", "e", "r", "s"]),
+        (
+            ["mac", "linux", "windows", "windows", "android", "windows", "android"],
+            ["mac", "linux", "windows", "android"],
+        ),
+        ([3, 5, -3, 23, 10], [3, 5, -3, 23, 10]),
+        ([True, False, True, True, None, False], [True, False, None]),
+        ([None, None, None], [None]),
+        ([], []),
+    ],
+)
+def test_remove_duplicates[T](array: list[T], expected: list[T]) -> None:
+    assert remove_duplicates(array) == expected
