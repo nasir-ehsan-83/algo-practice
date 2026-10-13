@@ -10,7 +10,7 @@ def unique_elements[T](arr: list[T]) -> list[T]:
         else:
             frequency[num] += 1
 
-    result = [key for key, value in frequency if value == 1]
+    result = [key for key, value in frequency.items() if value == 1]
     return result
 
 
