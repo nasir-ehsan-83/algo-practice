@@ -5,7 +5,6 @@ description = "Personal collection of DSA exercises in Python"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
-
 [[project.authors]]
 name = "Nasir Ahmad Ehsan"
 email = "nasirahmadehsan1383@gmail.com"
@@ -16,3 +15,6 @@ dev = [
     "pytest-cov>=7.1.0",
     "ruff>=0.17.0",
 ]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
