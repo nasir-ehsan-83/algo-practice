@@ -1,5 +1,10 @@
-def add_numbers[T: (int, float)](a: T, b: T) -> T:
-    return a + b
+def add_numbers(a: float, b: float) -> float:
+    try:
+        a_float: float = float(a)
+        b_float: float = float(b)
+        return a_float + b_float
+    except TypeError:
+        raise ValueError("[Value-Error]: Value should be a number")
 
 
 def simple_interest(p: float, r: float, t: int) -> float:
