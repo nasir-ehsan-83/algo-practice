@@ -22,9 +22,11 @@ def compound_interest(p: float, r: float, t: int) -> float:
 def power(a: float, b: int) -> int | float:
     result: int | float = 1
 
-    for _ in range(b):
+    for _ in range(abs(int(b))):
         result *= a
 
+    if b < 0:
+        return 1 / result
     return result
 
 
