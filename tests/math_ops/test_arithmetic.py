@@ -1,6 +1,7 @@
 import pytest
 
 from src.math_ops import add_numbers, swap
+from src.math_ops import power as power_func
 
 
 @pytest.mark.parametrize(
@@ -53,3 +54,19 @@ def test_add_numbers[T: (int | float)](
 )
 def test_swap[T](first: T, second: T, expected: tuple[T, T]) -> None:
     assert swap(first, second) == expected
+
+
+@pytest.mark.parametrize(
+    "base, power, expected",
+    [
+        (2, 3, 8),
+        (-5, 2, 25),
+        (-3, 3, -27),
+        (1.2, 3, 1.728),
+        (-1.2, 3, -1.728),
+        (3.2, 2, 10.240000000000002),
+        (-3.2, 2, 10.240000000000002),
+    ],
+)
+def test_power(base: float, power: int, expected: float) -> None:
+    assert power_func(base, power) == expected
