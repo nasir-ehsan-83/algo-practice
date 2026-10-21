@@ -1,11 +1,14 @@
-def calculator[T: (int, float)](a: T, b: T, op: str) -> T | None:
-    if op == "+":
-        return a + b
-    elif op == "-":
-        return a - b
-    elif op == "*":
-        return a * b
-    elif op == "/":
-        return a // b if b != 0 else None
-    else:
-        return None
+def calculator[T: (int, float)](first: T, second: T, op: str) -> T | None:
+    match op:
+        case "+":
+            return first + second
+        case "-":
+            return first - second
+        case "*":
+            return first * second
+        case "/":
+            return first // second if second != 0 else None
+        case "%":
+            return first % second if second != 0 else None
+
+    return None
