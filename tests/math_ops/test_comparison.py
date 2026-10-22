@@ -1,6 +1,6 @@
 import pytest
 
-from src.math_ops import is_even, max_of_three
+from src.math_ops import is_even, max_of_three, min_of_three
 
 
 @pytest.mark.parametrize(
@@ -61,3 +61,33 @@ def test_is_even(number: float, expected: bool) -> None:
 )
 def test_max_of_three[T: (int, float, str)](a: T, b: T, c: T, expected: T) -> None:
     assert max_of_three(a, b, c) == expected
+
+
+@pytest.mark.parametrize(
+    "a, b, c, expected",
+    [
+        (1, 2, 3, 1),
+        (10, 17, 13, 10),
+        (20, 17, 13, 13),
+        (3, 3, 3, 3),
+        (0, 0, 0, 0),
+        (-2, -1, -3, -3),
+        (-10, -17, -13, -17),
+        (-20, -17, -13, -20),
+        (-3, -3, -3, -3),
+        (11.2, 12.3, 13.0, 11.2),
+        (10.1, 17.2, 13.4, 10.1),
+        (20.1, 17.2, 13.3, 13.3),
+        (3.0, 3.0, 3.0, 3.0),
+        (0.0, 0.1, 0.2, 0.0),
+        ("a", "b", "d", "a"),
+        ("f", "b", "c", "b"),
+        ("h", "g", "e", "e"),
+        ("e", "i", "c", "c"),
+        ("u", "m", "s", "m"),
+        ("ali", "ahmad", "akbar", "ahmad"),
+        ("basir", "ali", "omer", "ali"),
+    ],
+)
+def test_min_of_three[T: (int, float, str)](a: T, b: T, c: T, expected: T) -> None:
+    assert min_of_three(a, b, c) == expected
