@@ -1,17 +1,10 @@
 def count_digits(n: int) -> int:
     count: int = 0
-    is_negative: bool = False
-
-    if n < 0:
-        is_negative = True
 
     n = abs(n)
     while n > 0:
         count += 1
         n //= 10
-
-    if is_negative:
-        return -1 * count
 
     return count
 
