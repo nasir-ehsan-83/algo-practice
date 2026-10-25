@@ -1,6 +1,23 @@
 import pytest
 
-from src.math_ops import reverse_number, sum_of_digits
+from src.math_ops import count_digits, reverse_number, sum_of_digits
+
+
+@pytest.mark.parametrize(
+    "number, expected",
+    [
+        (123, 3),
+        (65, 2),
+        (3, 1),
+        (-123, 3),
+        (-12, 2),
+        (323, 3),
+        (236236523, 9),
+        (-2336236523, 10),
+    ],
+)
+def test_count_digits(number: int, expected: int) -> None:
+    assert count_digits(number) == expected
 
 
 @pytest.mark.parametrize(
