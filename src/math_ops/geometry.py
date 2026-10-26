@@ -1,10 +1,10 @@
-def rectangle_area_perimeter[T: (int, float)](length: T, width: T) -> tuple[T, T]:
-    area: T = length * width
-    perimeter: T = 2 * (length + width)
+def rectangle_area_perimeter(length: float, width: float) -> tuple[float, float]:
+    area: float = length * width
+    perimeter: float = 2 * (length + width)
     return area, perimeter
 
 
-def triangle_type[T: (int, float)](a: T, b: T, c: T) -> str:
+def triangle_type(a: float, b: float, c: float) -> str:
     if (a + b <= c) or (a + c <= b) or (b + c <= a):
         return "Invalid"
 
