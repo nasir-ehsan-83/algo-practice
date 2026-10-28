@@ -17,7 +17,7 @@ def multiply_matrix(A: list[list[int]], B: list[list[int]]):
     return result
 
 
-def set_zeroes[T](matrix: list[list[T]]) -> None | list[list[T]]:
+def set_zeroes(matrix: list[list[int | float]]) -> None:
     if not matrix:
         return
 
@@ -36,5 +36,3 @@ def set_zeroes[T](matrix: list[list[T]]) -> None | list[list[T]]:
         for j in range(cols):
             if row_flags[i] or col_flags[j]:
                 matrix[i][j] = 0
-
-    return matrix
