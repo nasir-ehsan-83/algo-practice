@@ -1,6 +1,6 @@
 import pytest
 
-from src.math_ops import gcd, lcm, primes_up_to
+from src.math_ops import decimal_to_binary, gcd, lcm, primes_up_to
 
 
 @pytest.mark.parametrize(
@@ -104,3 +104,27 @@ def test_lcm(a: int, b: int, expected: int) -> None:
 )
 def test_primes_up_to(n: int, expected: list[int]) -> None:
     assert primes_up_to(n) == expected
+
+
+@pytest.mark.parametrize(
+    "n, expected",
+    [
+        (0, "0b0"),
+        (1, "0b1"),
+        (2, "0b10"),
+        (3, "0b11"),
+        (4, "0b100"),
+        (5, "0b101"),
+        (8, "0b1000"),
+        (10, "0b1010"),
+        (15, "0b1111"),
+        (16, "0b10000"),
+        (255, "0b11111111"),
+        (1024, "0b10000000000"),
+        (-1, "-0b1"),
+        (-5, "-0b101"),
+        (-10, "-0b1010"),
+    ],
+)
+def test_decimal_to_binary(n: int, expected: str) -> None:
+    assert decimal_to_binary(n) == expected
