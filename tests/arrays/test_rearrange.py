@@ -1,6 +1,6 @@
 import pytest
 
-from src.arrays import is_rotation, rearrange_even_odd
+from src.arrays import is_rotation, rearrange_even_odd, rotate_right
 
 
 @pytest.mark.parametrize(
@@ -43,3 +43,27 @@ def test_is_rotation[T](
     expected: bool,
 ) -> None:
     assert is_rotation(s1, s2) is expected
+
+
+@pytest.mark.parametrize(
+    "arr, k, expected",
+    [
+        ([1, 2, 3, 4, 5], 2, [4, 5, 1, 2, 3]),
+        ([1, 2, 3, 4, 5], 1, [5, 1, 2, 3, 4]),
+        ([1, 2, 3, 4, 5], 5, [1, 2, 3, 4, 5]),
+        ([1, 2, 3, 4, 5], 0, [1, 2, 3, 4, 5]),
+        ([1, 2, 3, 4, 5], 7, [4, 5, 1, 2, 3]),
+        ([1, 2, 3], 3, [1, 2, 3]),
+        ([1, 2, 3], -1, [2, 3, 1]),
+        ([], 3, []),
+        ([1], 5, [1]),
+        (["a", "b", "c"], 1, ["c", "a", "b"]),
+        (["a", "b", "c"], 2, ["b", "c", "a"]),
+    ],
+)
+def test_rotate_right[T](
+    arr: list[T],
+    k: int,
+    expected: list[T],
+) -> None:
+    assert rotate_right(arr, k) == expected
