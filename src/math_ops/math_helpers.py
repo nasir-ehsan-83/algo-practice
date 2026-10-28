@@ -1,12 +1,14 @@
-def gcd[T: (int, float)](a: T, b: T) -> T:
+def gcd(a: int, b: int) -> int:
+    a, b = abs(a), abs(b)
     while b != 0:
         a, b = b, a % b
-
     return a
 
 
-def lcm[T: (int, float)](a: T, b: T) -> T:
-    return (a * b) // gcd(a, b)
+def lcm(a: int, b: int) -> int:
+    if a == 0 or b == 0:
+        return 0
+    return abs(a * b) // gcd(a, b)
 
 
 def primes_up_to(n: int) -> list[int]:
