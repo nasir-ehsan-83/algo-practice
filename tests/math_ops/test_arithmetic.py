@@ -1,6 +1,6 @@
 import pytest
 
-from src.math_ops import add_numbers, simple_interest, swap
+from src.math_ops import add_numbers, compound_interest, simple_interest, swap
 from src.math_ops import power as power_func
 
 
@@ -93,3 +93,28 @@ def test_simple_interest(
     expected: float,
 ) -> None:
     assert simple_interest(p, r, t) == pytest.approx(expected)
+
+
+@pytest.mark.parametrize(
+    "p, r, t, expected",
+    [
+        (1000.0, 10.0, 1, 100.0),
+        (1000.0, 10.0, 2, 210.0),
+        (1000.0, 10.0, 3, 331.0),
+        (5000.0, 5.0, 2, 512.5),
+        (2000.0, 7.5, 4, 670.93828125),
+        (100.0, 1.0, 1, 1.0),
+        (10000.0, 12.5, 5, 8020.32470703125),
+        (0.0, 5.0, 2, 0.0),
+        (1000.0, 0.0, 2, 0.0),
+        (1000.0, 5.0, 0, 0.0),
+        (1500.0, 4.0, 2, 122.4),
+    ],
+)
+def test_compound_interest(
+    p: float,
+    r: float,
+    t: int,
+    expected: float,
+) -> None:
+    assert compound_interest(p, r, t) == pytest.approx(expected)
