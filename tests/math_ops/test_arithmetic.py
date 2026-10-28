@@ -1,6 +1,6 @@
 import pytest
 
-from src.math_ops import add_numbers, swap
+from src.math_ops import add_numbers, simple_interest, swap
 from src.math_ops import power as power_func
 
 
@@ -70,3 +70,26 @@ def test_swap[T](first: T, second: T, expected: tuple[T, T]) -> None:
 )
 def test_power(base: float, power: int, expected: float) -> None:
     assert power_func(base, power) == expected
+
+
+@pytest.mark.parametrize(
+    "p, r, t, expected",
+    [
+        (1000.0, 5.0, 2, 100.0),
+        (5000.0, 10.0, 3, 1500.0),
+        (2000.0, 7.5, 4, 600.0),
+        (100.0, 1.0, 1, 1.0),
+        (10000.0, 12.5, 5, 6250.0),
+        (0.0, 5.0, 2, 0.0),
+        (1000.0, 0.0, 2, 0.0),
+        (1000.0, 5.0, 0, 0.0),
+        (1500.0, 4.0, 2, 120.0),
+    ],
+)
+def test_simple_interest(
+    p: float,
+    r: float,
+    t: int,
+    expected: float,
+) -> None:
+    assert simple_interest(p, r, t) == pytest.approx(expected)
