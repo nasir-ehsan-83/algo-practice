@@ -14,8 +14,7 @@ def simple_interest(p: float, r: float, t: int) -> float:
 def compound_interest(p: float, r: float, t: int) -> float:
     amount: float = p
     for _ in range(t):
-        amount = amount + (amount * r // 100)
-
+        amount = amount + (amount * r / 100)
     return amount - p
 
 
