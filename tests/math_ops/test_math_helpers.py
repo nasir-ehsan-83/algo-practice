@@ -1,6 +1,6 @@
 import pytest
 
-from src.math_ops import gcd, lcm
+from src.math_ops import gcd, lcm, primes_up_to
 
 
 @pytest.mark.parametrize(
@@ -51,3 +51,56 @@ def test_gcd(a: int, b: int, expected: int) -> None:
 )
 def test_lcm(a: int, b: int, expected: int) -> None:
     assert lcm(a, b) == expected
+
+
+@pytest.mark.parametrize(
+    "n, expected",
+    [
+        (0, []),
+        (1, []),
+        (2, [2]),
+        (3, [2, 3]),
+        (4, [2, 3]),
+        (5, [2, 3, 5]),
+        (10, [2, 3, 5, 7]),
+        (11, [2, 3, 5, 7, 11]),
+        (13, [2, 3, 5, 7, 11, 13]),
+        (20, [2, 3, 5, 7, 11, 13, 17, 19]),
+        (25, [2, 3, 5, 7, 11, 13, 17, 19, 23]),
+        (30, [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]),
+        (50, [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]),
+        (
+            100,
+            [
+                2,
+                3,
+                5,
+                7,
+                11,
+                13,
+                17,
+                19,
+                23,
+                29,
+                31,
+                37,
+                41,
+                43,
+                47,
+                53,
+                59,
+                61,
+                67,
+                71,
+                73,
+                79,
+                83,
+                89,
+                97,
+            ],
+        ),
+        (-5, []),
+    ],
+)
+def test_primes_up_to(n: int, expected: list[int]) -> None:
+    assert primes_up_to(n) == expected
