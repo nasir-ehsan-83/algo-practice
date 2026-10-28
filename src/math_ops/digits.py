@@ -1,7 +1,10 @@
 def count_digits(n: int) -> int:
-    count: int = 0
+    if n == 0:
+        return 1
 
+    count: int = 0
     n = abs(n)
+
     while n > 0:
         count += 1
         n //= 10
