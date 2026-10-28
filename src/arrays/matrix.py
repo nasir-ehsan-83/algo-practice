@@ -1,4 +1,7 @@
 def multiply_matrix(A: list[list[int]], B: list[list[int]]):
+    if not A or not B:
+        return None
+
     rows_A: int = len(A)
     cols_A: int = len(A[0])
     rows_B: int = len(B)
