@@ -28,9 +28,12 @@ def primes_up_to(n: int) -> list[int]:
     return result
 
 
-def decimal_to_binary(n) -> str:
+def decimal_to_binary(n: int) -> str:
     if n == 0:
-        return "0"
+        return "0b0"
+
+    if n < 0:
+        return "-" + decimal_to_binary(-n)
 
     binary = ""
     while n > 0:
