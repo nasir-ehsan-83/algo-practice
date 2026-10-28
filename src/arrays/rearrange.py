@@ -12,7 +12,7 @@ def rearrange_even_odd(arr: list[int]) -> list[int]:
     return evens + odds
 
 
-def rotate_right[T](arr: list[T], k: float) -> list[T]:
+def rotate_right[T](arr: list[T], k: int) -> list[T]:
     n = len(arr)
     if n == 0:
         return arr
