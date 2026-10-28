@@ -1,4 +1,4 @@
-from tables import Any
+from typing import Any
 
 
 def unique_elements[T](arr: list[T]) -> list[T]:
