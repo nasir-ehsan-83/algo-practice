@@ -1,6 +1,6 @@
 import pytest
 
-from src.math_ops import is_armstrong, is_palindrome, number_type
+from src.math_ops import factors, is_armstrong, is_palindrome, is_prime, number_type
 
 
 @pytest.mark.parametrize(
@@ -67,3 +67,53 @@ import pytest
 )
 def test_is_palindrome(number: int, expected: bool) -> None:
     assert is_palindrome(number) == expected
+
+
+@pytest.mark.parametrize(
+    "number, expected",
+    [
+        (0, False),
+        (1, False),
+        (-1, False),
+        (-7, False),
+        (2, True),
+        (3, True),
+        (5, True),
+        (7, True),
+        (11, True),
+        (13, True),
+        (17, True),
+        (97, True),
+        (4, False),
+        (6, False),
+        (9, False),
+        (15, False),
+        (25, False),
+        (49, False),
+        (100, False),
+        (121, False),
+    ],
+)
+def test_is_prime(number: int, expected: bool) -> None:
+    assert is_prime(number) == expected
+
+
+@pytest.mark.parametrize(
+    "number, expected",
+    [
+        (1, [1]),
+        (2, [1, 2]),
+        (3, [1, 3]),
+        (4, [1, 2, 4]),
+        (6, [1, 2, 3, 6]),
+        (10, [1, 2, 5, 10]),
+        (12, [1, 2, 3, 4, 6, 12]),
+        (16, [1, 2, 4, 8, 16]),
+        (25, [1, 5, 25]),
+        (36, [1, 2, 3, 4, 6, 9, 12, 18, 36]),
+        (49, [1, 7, 49]),
+        (100, [1, 2, 4, 5, 10, 20, 25, 50, 100]),
+    ],
+)
+def test_factors(number: int, expected: list[int]) -> None:
+    assert factors(number) == expected
