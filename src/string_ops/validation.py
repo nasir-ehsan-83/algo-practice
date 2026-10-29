@@ -1,9 +1,9 @@
-def password_strength(password) -> str:
+def password_strength(password: str) -> str:
     if len(password) < 8:
         return "Weak"
 
-    has_upper = True
-    has_lower = True
+    has_upper = False
+    has_lower = False
     has_digit = False
 
     for ch in password:
