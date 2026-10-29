@@ -4,17 +4,17 @@ on:
   push:
     branches: [main, master]
     paths:
-      - '**.py'
-      - 'pyproject.toml'
-      - 'uv.lock'
-      - '.github/workflows/ci.yml'
+      - "**.py"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/ci.yml"
   pull_request:
     branches: [main, master]
     paths:
-      - '**.py'
-      - 'pyproject.toml'
-      - 'uv.lock'
-      - '.github/workflows/ci.yml'
+      - "**.py"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/ci.yml"
 
 jobs:
   lint:
@@ -55,5 +55,5 @@ jobs:
       - name: Install dependencies
         run: uv sync --all-extras --dev
 
-      - name: Run tests
-        run: uv run pytest -v
+      - name: Run tests with coverage
+        run: uv run pytest -v --cov=src --cov-report=term-missing
