@@ -1,6 +1,14 @@
 import pytest
 
-from src.math_ops import factors, is_armstrong, is_palindrome, is_prime, number_type
+from src.math_ops import (
+    factorial,
+    factorial_recursive,
+    factors,
+    is_armstrong,
+    is_palindrome,
+    is_prime,
+    number_type,
+)
 
 
 @pytest.mark.parametrize(
@@ -117,3 +125,41 @@ def test_is_prime(number: int, expected: bool) -> None:
 )
 def test_factors(number: int, expected: list[int]) -> None:
     assert factors(number) == expected
+
+
+@pytest.mark.parametrize(
+    "number, expected",
+    [
+        (0, 1),
+        (1, 1),
+        (2, 2),
+        (3, 6),
+        (4, 24),
+        (5, 120),
+        (6, 720),
+        (7, 5040),
+        (10, 3628800),
+        (12, 479001600),
+    ],
+)
+def test_factorial(number: int, expected: int) -> None:
+    assert factorial(number) == expected
+
+
+@pytest.mark.parametrize(
+    "number, expected",
+    [
+        (0, 1),
+        (1, 1),
+        (2, 2),
+        (3, 6),
+        (4, 24),
+        (5, 120),
+        (6, 720),
+        (7, 5040),
+        (10, 3628800),
+        (12, 479001600),
+    ],
+)
+def test_factorial_recursive(number: int, expected: int) -> None:
+    assert factorial_recursive(number) == expected
